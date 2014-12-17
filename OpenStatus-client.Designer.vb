@@ -27,6 +27,7 @@ Partial Class OpenStatusClient
         Me.grpStatus = New System.Windows.Forms.GroupBox()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.lblServer = New System.Windows.Forms.Label()
+        Me.btnServer = New System.Windows.Forms.Button()
         Me.grpStatus.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,6 +46,7 @@ Partial Class OpenStatusClient
         '
         Me.grpStatus.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpStatus.Controls.Add(Me.btnServer)
         Me.grpStatus.Controls.Add(Me.lblServer)
         Me.grpStatus.Controls.Add(Me.lblUsername)
         Me.grpStatus.Controls.Add(Me.btnChangeUsername)
@@ -73,6 +75,17 @@ Partial Class OpenStatusClient
         Me.lblServer.TabIndex = 2
         Me.lblServer.Text = "Server: NOT_CONNECTED"
         '
+        'btnServer
+        '
+        Me.btnServer.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnServer.Location = New System.Drawing.Point(6, 74)
+        Me.btnServer.Name = "btnServer"
+        Me.btnServer.Size = New System.Drawing.Size(188, 23)
+        Me.btnServer.TabIndex = 3
+        Me.btnServer.Text = "Connect to a server..."
+        Me.btnServer.UseVisualStyleBackColor = True
+        '
         'OpenStatusClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -91,5 +104,6 @@ Partial Class OpenStatusClient
     Friend WithEvents grpStatus As System.Windows.Forms.GroupBox
     Friend WithEvents lblServer As System.Windows.Forms.Label
     Friend WithEvents lblUsername As System.Windows.Forms.Label
+    Friend WithEvents btnServer As System.Windows.Forms.Button
 
 End Class

@@ -77,6 +77,18 @@ Namespace My
                 Me("Username") = value
             End Set
         End Property
+
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("")> _
+        Public Property lastServer() As String
+            Get
+                Return CType(Me("lastServer"), String)
+            End Get
+            Set(value As String)
+                Me("lastServer") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
