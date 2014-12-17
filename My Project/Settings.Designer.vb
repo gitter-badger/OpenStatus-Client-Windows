@@ -89,6 +89,18 @@ Namespace My
                 Me("lastServer") = value
             End Set
         End Property
+
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")> _
+        Public Property AutoConnect() As Boolean
+            Get
+                Return CType(Me("AutoConnect"), Boolean)
+            End Get
+            Set(value As Boolean)
+                Me("AutoConnect") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

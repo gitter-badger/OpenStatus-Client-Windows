@@ -13,8 +13,13 @@
                                             & vbNewLine & "Please enter your (to-be) username:")
         End If
         SetUsername()
-        btnServer_Click()
-
+        If My.Settings.AutoConnect Then
+            btnServer.Text = "Disconnect"
+            SetServer()
+        Else
+            btnServer_Click()
+        End If
+        chkAutoConnect.Checked = My.Settings.AutoConnect
     End Sub
 
     Private Sub btnChangeUsername_Click(sender As Object, e As EventArgs) Handles btnChangeUsername.Click
@@ -39,5 +44,9 @@
 
     Sub SetServer()
         lblServer.Text = "Server: " & My.Settings.lastServer
+    End Sub
+
+    Private Sub chkAutoConnect_CheckedChanged(sender As Object, e As EventArgs) Handles chkAutoConnect.CheckedChanged
+        My.Settings.AutoConnect = chkAutoConnect.Checked
     End Sub
 End Class

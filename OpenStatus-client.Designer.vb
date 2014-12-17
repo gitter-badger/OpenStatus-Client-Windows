@@ -28,6 +28,7 @@ Partial Class OpenStatusClient
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.lblServer = New System.Windows.Forms.Label()
         Me.btnServer = New System.Windows.Forms.Button()
+        Me.chkAutoConnect = New System.Windows.Forms.CheckBox()
         Me.grpStatus.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -46,6 +47,7 @@ Partial Class OpenStatusClient
         '
         Me.grpStatus.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpStatus.Controls.Add(Me.chkAutoConnect)
         Me.grpStatus.Controls.Add(Me.btnServer)
         Me.grpStatus.Controls.Add(Me.lblServer)
         Me.grpStatus.Controls.Add(Me.lblUsername)
@@ -86,6 +88,16 @@ Partial Class OpenStatusClient
         Me.btnServer.Text = "Connect to a server..."
         Me.btnServer.UseVisualStyleBackColor = True
         '
+        'chkAutoConnect
+        '
+        Me.chkAutoConnect.AutoSize = True
+        Me.chkAutoConnect.Location = New System.Drawing.Point(6, 103)
+        Me.chkAutoConnect.Name = "chkAutoConnect"
+        Me.chkAutoConnect.Size = New System.Drawing.Size(140, 17)
+        Me.chkAutoConnect.TabIndex = 4
+        Me.chkAutoConnect.Text = "Auto-connect on startup"
+        Me.chkAutoConnect.UseVisualStyleBackColor = True
+        '
         'OpenStatusClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -105,5 +117,6 @@ Partial Class OpenStatusClient
     Friend WithEvents lblServer As System.Windows.Forms.Label
     Friend WithEvents lblUsername As System.Windows.Forms.Label
     Friend WithEvents btnServer As System.Windows.Forms.Button
+    Friend WithEvents chkAutoConnect As System.Windows.Forms.CheckBox
 
 End Class
