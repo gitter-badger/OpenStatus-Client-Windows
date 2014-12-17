@@ -27,9 +27,14 @@
     End Sub
 
     Private Sub btnServer_Click() Handles btnServer.Click
-        My.Settings.lastServer = InputBox("Enter server address:", , My.Settings.lastServer)
-        btnServer.Text = "Disconnect"
-        SetServer()
+        If btnServer.Text = "Connect to a server..." Then
+            My.Settings.lastServer = InputBox("Enter server address to connect to:", , My.Settings.lastServer)
+            btnServer.Text = "Disconnect"
+            SetServer()
+        ElseIf btnServer.Text = "Disconnect" Then
+            btnServer.Text = "Connect to a server..."
+            lblServer.Text = "Server: NOT_CONNECTED"
+        End If
     End Sub
 
     Sub SetServer()
