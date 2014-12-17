@@ -29,6 +29,7 @@ Partial Class OpenStatusClient
         Me.lblServer = New System.Windows.Forms.Label()
         Me.btnServer = New System.Windows.Forms.Button()
         Me.chkAutoConnect = New System.Windows.Forms.CheckBox()
+        Me.serverSelectorDialog = New System.Windows.Forms.FolderBrowserDialog()
         Me.grpStatus.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -98,6 +99,11 @@ Partial Class OpenStatusClient
         Me.chkAutoConnect.Text = "Auto-connect on startup"
         Me.chkAutoConnect.UseVisualStyleBackColor = True
         '
+        'serverSelectorDialog
+        '
+        Me.serverSelectorDialog.Description = "Select a folder that contains an OpenStatus server:"
+        Me.serverSelectorDialog.ShowNewFolderButton = False
+        '
         'OpenStatusClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -118,5 +124,6 @@ Partial Class OpenStatusClient
     Friend WithEvents lblUsername As System.Windows.Forms.Label
     Friend WithEvents btnServer As System.Windows.Forms.Button
     Friend WithEvents chkAutoConnect As System.Windows.Forms.CheckBox
+    Friend WithEvents serverSelectorDialog As System.Windows.Forms.FolderBrowserDialog
 
 End Class

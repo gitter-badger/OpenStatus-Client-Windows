@@ -1,8 +1,6 @@
 ﻿Imports System.IO.File
 
 Public Class OpenStatusClient
-    Dim connectingServer As String
-
     Private Sub OpenStatusClient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim count = 0
         For Each args In My.Application.CommandLineArgs
@@ -17,7 +15,6 @@ Public Class OpenStatusClient
         End If
         SetUsername()
         If My.Settings.AutoConnect Then
-            btnServer.Text = "Disconnect"
             SetServer()
         Else
             btnServer_Click()
@@ -36,11 +33,13 @@ Public Class OpenStatusClient
 
     Private Sub btnServer_Click() Handles btnServer.Click
         If btnServer.Text = "Connect to a server..." Then
-            connectingServer = InputBox("Enter server address to connect to:", , My.Settings.lastServer)
-            If Exists(connectingServer & "\.config\OpenStatus") Then
-                My.Settings.lastServer = connectingServer
-                btnServer.Text = "Disconnect"
+            serverSelectorDialog.SelectedPath = My.Settings.lastServer
+            serverSelectorDialog.ShowDialog()
+            If Exists(serverSelectorDialog.SelectedPath & "\.config\OpenStatus") Then
+                My.Settings.lastServer = serverSelectorDialog.SelectedPath
                 SetServer()
+            Else
+                MsgBox("Server info not found! Please select a valid server folder, Or generate a new one with the backend")
             End If
         ElseIf btnServer.Text = "Disconnect" Then
             btnServer.Text = "Connect to a server..."
@@ -52,6 +51,7 @@ Public Class OpenStatusClient
         For Each line In ReadLines(My.Settings.lastServer & "\.config\OpenStatus")
 
         Next
+        btnServer.Text = "Disconnect"
         lblServer.Text = "Server: " & My.Settings.lastServer
     End Sub
 
