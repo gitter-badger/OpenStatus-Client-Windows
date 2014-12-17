@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("OpenStatus")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("OpenStatus")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyTitle("Open Status Client for Windows")> 
+<Assembly: AssemblyDescription("VB.Net Implementation of the OpenStatus Python Client")> 
+<Assembly: AssemblyCompany("DeavmiOSS")> 
+<Assembly: AssemblyProduct("OpenStatusClientWin")> 
+<Assembly: AssemblyCopyright("FOSS from DeavmiOSS 2014")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
